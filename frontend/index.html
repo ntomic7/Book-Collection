@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My Books</h1>
+
+    <div id="error-banner" class="error-banner"></div>
+
+    <div id="auth-section" class="hidden">
+        <h2>Log in or register</h2>
+        <form id="auth-form">
+            <input type="text" id="auth-username" placeholder="Username"
+            aria-label="Username" required>
+            <input type="password" id="auth-password" placeholder="Password"
+                   aria-label="Password" required>
+            <button type="submit">Log in</button>
+            <button type="button" id="register-button" class="cancel-button">
+                Register</button>
+        </form>
+    </div>
+
+    <div id="app-section" class="hidden">
+        <button id="add-book-button" onclick="openAddModal()">+ Add Book</button>
+        <button id="logout-button" class="cancel-button" onclick="logout()">Log out</button>
+
+        <div id="add-modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <h3>Add a Book</h3>
+                <form id="add-book-form" >
+                    <input type="text" id="title" placeholder="Title"
+                           aria-label="Title" required>
+                    <input type="text" id="author" placeholder="Author"
+                           aria-label="Author" required>
+                    <div class ="genre-picker">
+                        <input type="text" id="genre" placeholder="Genre"
+                               aria-label="Genre" autocomplete="off" required>
+                        <div class="genre-options" id="genre-options"></div>
+                    </div>
+                    <input type="number" id="rating" placeholder="Rating (1-5)"
+                           aria-label="Rating" min="1" max="5" required>
+                    <button type="submit">Add Book</button>
+                    <button type="button" class="cancel-button"
+                            onclick="closeAddModal()">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="edit-modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <h4>Edit Book</h4>
+                <form id="edit-book-form">
+                    <input type="text" id="edit-title" placeholder="Title"
+                           aria-label="Title" required>
+                    <input type="text" id="edit-author" placeholder="Author"
+                           aria-label="Author" required>
+                    <div class ="genre-picker">
+                        <input type="text" id="edit-genre" placeholder="Genre"
+                               aria-label="Genre" autocomplete="off" required>
+                        <div class="edit-genre-options" id="edit-genre-options"></div>
+                    </div>
+                    <input type="number" id="edit-rating" placeholder="Rating (1-5)"
+                           aria-label="Rating" min="1" max="5" required>
+                    <button type="submit">Save Changes</button>
+                    <button type="button" class="cancel-button" onclick="closeEditModal()">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <input type="text" id="search-box" placeholder="Search by title..."
+               aria-label="Search">
+
+        <div id="book-list"></div>
+    </div>
+
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

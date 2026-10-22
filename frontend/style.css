@@ -1,0 +1,214 @@
+ body {
+		font-family: system-ui, sans-serif;
+		max-width: 700px;
+		margin: 40px auto;
+		padding: 0 20px;
+		background-color: #f5ead0;
+		color: #2b2b2b;
+	}
+
+	h1 {
+		border-bottom: 3px solid #454fb5;
+		padding-bottom: 10px;
+		color: #808bea;
+	}
+
+	h2, h3
+	{
+		margin-top: 40px;
+		margin-bottom: 10px;
+		color: #808bea;
+		font-size: 24px;
+	}
+
+	.modal-overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		justify-content: center;
+		align-items: center;
+	}
+
+	.modal-overlay.active {
+		display: flex;
+	}
+
+	.modal {
+		background: white;
+		border-radius: 10px;
+		padding: 24px;
+		width: 90%;
+		max-width: 400px;
+	}
+
+	.modal form {
+		flex-direction: column;
+	}
+
+	.hidden{display: none}
+
+
+	#book-list
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.book-card
+	{
+		background: #f7f4ed;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		padding: 14px 18px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.book-info strong
+	{
+		font-size: 18px;
+		color: #4c529e;
+	}
+	.book-info .author
+	{
+		font-size: 16px;
+		color: #393e75;
+	}
+	.book-info small
+	{
+		font-size: 15px;
+		color: #484e9c;
+	}
+
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		background: #f7f4ed;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		padding: 16px;
+	}
+
+	input {
+		flex: 1;
+		min-width: 120px;
+		padding: 8px 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 14px;
+		color: #484e9c;
+	}
+	::placeholder{
+		color: #484e9c;
+	}
+	input:focus{
+		border-color: #484e9c;
+		outline: none;
+		border-width: 1px;
+	}
+
+	#search-box
+	{
+		background: #f7f4ed;
+		color: #808bea;
+	}
+
+	button {
+		padding: 8px 16px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 14px;
+	}
+
+	button[type="submit"]
+	{
+		background-color: #808bea;
+		color: #e6e8fa;
+	}
+	button[type="submit"]:hover
+	{
+		background-color: #5f6ac9;
+		color: #d5d8eb;
+	}
+
+	#book-list button
+	{
+		margin-left: 6px;
+		background-color: #fcddb5;
+	}
+	#book-list button:hover
+	{
+		background-color: #e8cda9;
+	}
+	#add-book-button
+	{
+		background-color: #808bea;
+		color: #e6e8fa;
+	}
+	.cancel-button
+	{
+		background-color: #e4e1ea;
+		color: #4c529e;
+	}
+	.cancel-button:hover
+	{
+		background-color: #d3cfdd;
+	}
+
+	.error-banner {
+		display: none;
+		background-color: #fbdad9;
+		color: #a33a3a;
+		border: 1px solid #e3a5a5;
+		border-radius: 6px;
+		padding: 10px 16px;
+		margin-bottom: 16px;
+	}
+
+	.error-banner.active {
+		display: block;
+	}
+
+
+
+ .genre-picker { position: relative; }
+
+ .genre-picker input {
+	 width: 100%;
+	 box-sizing: border-box;
+ }
+
+ .genre-options, .edit-genre-options {
+	 display: none;
+	 position: absolute;
+	 top: 100%;
+	 left: 0;
+	 right: 0;
+	 max-height: 180px;
+	 overflow-y: auto;
+	 background: white;
+	 border: 1px solid #ccc;
+	 border-radius: 5px;
+	 z-index: 10;
+	 color: #4c529e;
+ }
+
+ .genre-options.open { display: block; }
+ .edit-genre-options.open { display: block; }
+
+ .genre-options, .edit-genre-options div {
+	 padding: 8px 10px;
+	 cursor: pointer;
+ }
+
+ .genre-options, .edit-genre-options div:hover { background: #e4e1ea; }

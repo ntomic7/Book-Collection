@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+psycopg[binary]
+python-dotenv
+pwdlib[argon2]
+pyjwt
